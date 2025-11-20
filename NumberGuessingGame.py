@@ -1,11 +1,15 @@
 from random import randint
 
 guessingNumber = int(input("Enter your guessing number between 1 and 10: "))
-randomNumber = randint(1, 10)
 
-if guessingNumber == randomNumber:
-    print("Hurrah! You won.")
+# Check if input is out of range
+if guessingNumber < 1 or guessingNumber > 10:
+    print("Error: Number is out of range. Please enter a number between 1 and 10.")
 else:
-    print("Oops! You lost.")
-    print("Random number was: ", randomNumber)
+    randomNumber = randint(1, 10)
 
+    if guessingNumber == randomNumber:
+        print("Hurrah! You won.")
+    else:
+        print("Oops! You lost.")
+        print("Random number was:", randomNumber)
